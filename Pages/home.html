@@ -1,6 +1,6 @@
 <main class="hero container-fluid text-center">
   <article class="hero__bigTitle d-flex row align-items-center p-0 mb-0">
-    <div class="hero__bigTitle-content col-lg-6 col-md-6 col-sm-12">
+    <div class="hero__bigTitle-content col-lg-6 col-md-6 col-sm-12 p-2">
       <h1 class="p-2">
         Bienvenue au zoo Arcadia
       </h1>
@@ -10,16 +10,16 @@
         mais aussi l’un des rares zoo entièrement indépendant au niveau des
         énergies
       </p>
-      <button class="btn btn-primary text-secondary btn-sm mb-3 p-1">
-        <p class="m-0">Voir les différents animaux</p>
-      </button>
+      <a href="./habitats.html"
+        class="btn btn-primary text-secondary mb-3 p-2">Voir les
+        différents animaux</a>
     </div>
     <div class="hero__bigTitle-img col-lg-6 col-md-6 col-sm-12 p-2 m-0">
       <img src="../img/lion-seul.png" class="img-fluid rounded" width="1280px"
         height="810px" alt="Lion-family">
     </div>
   </article>
-  <article class="hero__habitat d-flex row align-items-center p-2 mb-3">
+  <article class="hero__habitat d-flex row align-items-center p-1 mb-1">
     <div class="hero__habitat-img col-lg-6 col-md-6 col-sm-12 p-2 m-0">
       <img src="../img/terre-des-lions.png" width="1280px" height="810px"
         class="img-fluid rounded" alt="habitat-lion">
@@ -27,11 +27,8 @@
     <div
       class="hero__habitat-content col-lg-6 col-md-6 col-sm-12 p-2 m-0 text-center">
       <p>
-        Le royaume des chasseurs et les espaces environnants ont été pensés
-        comme un
-        véritable territoire au cœur de la savane. Dans ces vastes plaines, tout
-        est
-        fait pour que les animaux de la savane puissent se sentir à l’aise dans
+        Tout est fait pour que les animaux puissent se sentir à
+        l’aise dans
         un
         environnement époustouflant, où le réaménagement des installations, y
         compris
@@ -40,26 +37,108 @@
         ont été pensés pour le bien-être des animaux et pour votre plus grand
         plaisir.
       </p>
-      <button class="btn btn-secondary text-primary btn-sm mb-3 p-2">
-        <p class="m-0">Voir les différents habitats</p>
-      </button>
+      <a href="./habitats.html"
+        class="btn btn-secondary text-primary mb-3 p-2">Voir les différents
+        habitats
+      </a>
     </div>
   </article>
   <article class="hero__services d-flex row align-items-center p-0 mb-0">
     <div class="hero__services-content col-lg-6 col-md-6 col-sm-12 p-2">
       <h5>Durable, saisonnier, local</h5>
       <p>
-        Tous nos services préparés avec soin par nos équipes de professionnels
+        Tous nos services préparés avec soin, par nos équipes de professionnels,
         sont mis à votre disposition
       </p>
-      <button class="btn btn-primary text-secondary btn-sm mb-3 p-1">
-        <p class="m-0">Voir les différents services</p>
-      </button>
+      <a href="./services.html"
+        class="btn btn-primary text-secondary mb-3 p-2">Voir
+        les
+        différents services</a>
     </div>
-    <div class="hero__bigTitle-img col-lg-6 col-md-6 col-sm-12 p-2 m-0">
-      <img src="../img/restaurant.png" class="img-fluid rounded" width="1280px"
-        height="810px" alt="restaurant">
+    <div class="hero__services-img col-lg-6 col-md-6 col-sm-12 p-2">
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../img/restaurant.png" class="d-block w-100"
+              alt="restaurant">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Au restaurant des lions</h5>
+              <p>Faites le plein avec nos snacks bio divers et variés dans nos
+                emballages recyclés</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../img/house-bird.png" class="d-block w-100"
+              alt="house-bird">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>La maison des oiseaux</h5>
+              <p>Visite des habitats avec un guide gratuit</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../img/train-touristique.jpg" class="d-block w-100"
+              alt="train-touristique">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Petit train</h5>
+              <p>Profitez d'une visite inoubliable du parc en train écolo</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </article>
-
+  <article>
+    <div class="hero__avis d-flex row align-items-center text-center p-0 mb-0">
+      <div class="hero__avis-review col-lg-12 col-md-12 col-sm-12 p-2">
+        <h5 class="text-uppercase text-decoration-underline m-2 p-2">Zoo Arcadia
+        </h5>
+        <img src="../img/Review.png" width="120px" height="20px" alt="avis">
+        <p>7,047 reviews</p>
+        <p><img src="../img/chouette.png" width="40px" height="40px"
+            alt="chouette">Tripadivisi</p>
+      </div>
+    </div>
+    <div class="hero__avis d-flex row align-items-center text-center p-0 mb-0">
+      <div class="hero__avis-content col-lg-4 col-md-12 col-sm-12">
+        <p class="align-items-center text-center">
+          “À faire et à refaire ! C’est notre deuxième visite et pas la
+          dernière. <br> Voir autant d’animaux magnifiques, c’est incroyable”
+          <br>
+          valerie3582 - février.2024
+        </p>
+      </div>
+      <div class="hero__avis-content col-lg-4 col-md-12 col-sm-12">
+        <p class="align-items-center text-center">
+          “Un lieu magnifique et propre avec des animaux où le bien-être est
+          respecté. Je recommande” <br>
+          Jerome287 - Mai.2024
+        </p>
+      </div>
+      <div class="hero__avis-content col-lg-4 col-md-6 col-sm-12">
+        <p class="align-items-center text-center">
+          “Mes enfants ont adoré ! <br> Très beau parc...À refaire” <br>
+          Coquelicot1459 - juin.2024
+        </p>
+      </div>
+    </div>
+  </article>
 </main>
