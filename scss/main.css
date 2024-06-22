@@ -11855,7 +11855,7 @@ body {
 }
 
 main {
-  padding-bottom: 300px;
+  padding-bottom: 75px;
 }
 
 nav.navbar {
@@ -11884,6 +11884,11 @@ h6,
   font-family: "Montserrat", sans-serif;
 }
 
+a {
+  font-family: "Hind Madurai", serif;
+  font-size: 18px;
+}
+
 p {
   font-family: "Hind Madurai", serif;
   font-size: 18px;
@@ -11897,15 +11902,17 @@ p {
   background-color: #bdc4ab;
 }
 
-.btn p {
+.btn {
   font-weight: bold;
 }
 
 @media screen and (max-width: 400px) {
-  .hero__bigTitle-content {
+  .hero__bigTitle-content,
+  .hero__services-content {
     order: 2;
   }
-  .hero__bigTitle-img {
+  .hero__bigTitle-img,
+  .hero__services-img {
     order: -1;
   }
 }
