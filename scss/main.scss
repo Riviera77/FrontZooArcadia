@@ -10,7 +10,7 @@ body {
 	background-color: $primary;
 }
 main {
-	padding-bottom: 250px;
+	padding-bottom: 300px;
 }
 
 nav.navbar {
@@ -33,25 +33,19 @@ h4,
 h5,
 h6 {
 	font-family: $font-family-sans-serif;
-	font-size: 24px;
 }
 
 p {
 	font-family: $font-family-serif;
 	font-size: 18px;
+	margin-bottom: 2rem;
 }
-.bigTitle-content {
-	background-color: $card;
-	padding: 20px;
-}
-.bigTitle-img {
-	height: auto;
-
-	&.img {
-		max-width: 100%;
-		height: auto;
-		background-size: cover;
-		background-repeat: no-repeat;
+.hero {
+	&__bigTitle {
+		background-color: $card;
+	}
+	&__services {
+		background-color: $card;
 	}
 }
 
@@ -59,13 +53,16 @@ p {
 	font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
-	.bigTitle-content {
+@media screen and (max-width: 400px) {
+	.hero__bigTitle-content {
 		order: 2;
 	}
-	.bigTitle-img {
+	.hero__bigTitle-img {
 		order: -1;
 	}
+}
+
+@media screen and (max-width: 768px) {
 	p {
 		font-size: 16px;
 	}

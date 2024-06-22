@@ -11855,7 +11855,7 @@ body {
 }
 
 main {
-  padding-bottom: 250px;
+  padding-bottom: 300px;
 }
 
 nav.navbar {
@@ -11882,40 +11882,34 @@ h5,
 h6,
 .h6 {
   font-family: "Montserrat", sans-serif;
-  font-size: 24px;
 }
 
 p {
   font-family: "Hind Madurai", serif;
   font-size: 18px;
+  margin-bottom: 2rem;
 }
 
-.bigTitle-content {
+.hero__bigTitle {
   background-color: #bdc4ab;
-  padding: 20px;
 }
-
-.bigTitle-img {
-  height: auto;
-}
-.bigTitle-img.img {
-  max-width: 100%;
-  height: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
+.hero__services {
+  background-color: #bdc4ab;
 }
 
 .btn p {
   font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
-  .bigTitle-content {
+@media screen and (max-width: 400px) {
+  .hero__bigTitle-content {
     order: 2;
   }
-  .bigTitle-img {
+  .hero__bigTitle-img {
     order: -1;
   }
+}
+@media screen and (max-width: 768px) {
   p {
     font-size: 16px;
   }
