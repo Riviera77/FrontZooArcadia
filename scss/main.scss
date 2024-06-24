@@ -53,8 +53,30 @@ p {
 	}
 }
 
+.card-body {
+	background-color: $card;
+	& .card-title {
+		font-weight: bold;
+		color: $secondary;
+	}
+	& .card-text {
+		font-weight: bold;
+	}
+	& .btn {
+		background-color: $primary;
+		color: $secondary;
+	}
+}
+
 .btn {
 	font-weight: bold;
+}
+
+.carousel-control-prev-icon {
+	background-image: url('../img/carousel-control-prev-icon.png');
+}
+.carousel-control-next-icon {
+	background-image: url('../img/carousel-control-next-icon.png');
 }
 
 @media screen and (max-width: 400px) {

@@ -11902,8 +11902,31 @@ p {
   background-color: #bdc4ab;
 }
 
+.card-body {
+  background-color: #bdc4ab;
+}
+.card-body .card-title {
+  font-weight: bold;
+  color: #4f7330;
+}
+.card-body .card-text {
+  font-weight: bold;
+}
+.card-body .btn {
+  background-color: #f5f0d7;
+  color: #4f7330;
+}
+
 .btn {
   font-weight: bold;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("../img/carousel-control-prev-icon.png");
+}
+
+.carousel-control-next-icon {
+  background-image: url("../img/carousel-control-next-icon.png");
 }
 
 @media screen and (max-width: 400px) {
