@@ -7,8 +7,6 @@ html {
 	min-height: 100%;
 }
 body {
-	//background-color: $primary;
-	//background-image: url('../img/white-paper-texture.jpg');
 	background-image: linear-gradient(rgba(245, 240, 215, 0.7), rgba(245, 240, 215, 0.7)),
 		url('../img/white-paper-texture.jpg');
 }
@@ -81,12 +79,10 @@ nav.navbar {
 //page-home
 .hero {
 	&__bigTitle {
-		//background-color: $info;
 		background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)),
 			url('../img/white-paper-texture.jpg');
 	}
 	&__services {
-		//background-color: $info;
 		background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)),
 			url('../img/white-paper-texture.jpg');
 	}
