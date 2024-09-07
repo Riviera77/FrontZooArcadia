@@ -6,7 +6,8 @@ html {
 	position: relative;
 	min-height: 100%;
 }
-body {
+body,
+.service {
 	background-image: linear-gradient(rgba(245, 240, 215, 0.7), rgba(245, 240, 215, 0.7)),
 		url('../img/white-paper-texture.jpg');
 }
@@ -67,6 +68,10 @@ p {
 }
 .service--info {
 	background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)),
+		url('../img/white-paper-texture.jpg');
+}
+.service--secondary {
+	background-image: linear-gradient(rgba(79, 115, 48, 0.7), rgba(79, 115, 48, 0.7)),
 		url('../img/white-paper-texture.jpg');
 }
 //Layout-Header
