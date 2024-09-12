@@ -27,6 +27,7 @@ h6 {
 a {
 	font-family: $font-family-serif;
 	font-size: 1.125rem;
+	color: $dark;
 }
 p {
 	font-family: $font-family-serif;
@@ -80,7 +81,10 @@ nav.navbar {
 		url(../img/Elephant-background.png);
 	background-size: cover;
 }
-
+//Footer
+.social-media {
+	color: $primary;
+}
 //page-home
 .hero {
 	&__bigTitle {

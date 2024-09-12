@@ -11876,6 +11876,7 @@ h6,
 a {
   font-family: "Hind Madurai", serif;
   font-size: 1.125rem;
+  color: #092330;
 }
 
 p {
@@ -11933,6 +11934,10 @@ p {
 nav.navbar {
   background-image: linear-gradient(74deg, rgba(245, 240, 215, 0.8) 0%, rgba(143, 140, 125, 0.8) 100%), url(../img/Elephant-background.png);
   background-size: cover;
+}
+
+.social-media {
+  color: #f5f0d7;
 }
 
 .hero__bigTitle {
