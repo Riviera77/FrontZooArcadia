@@ -5,10 +5,12 @@ export const allRoutes = [
 	new Route('/', 'Accueil', '/pages/home.html'),
 	new Route('/services', 'services', '/pages/services.html'),
 	new Route('/habitats', 'habitats', '/pages/habitats.html'),
-	new Route('/hippo', 'hippo', '/pages/hippo.html'),
-	new Route('/hippo-nain', 'hippo-nain', '/pages/hippo-nain.html'),
 	new Route('/contact', 'contact', '/pages/contact.html'),
 	new Route('/connexion', 'connexion', '/pages/connexion.html'),
+	new Route('/hippo-habitat', 'hippo-habitat', '/pages/habitats/hippo/hippo-habitat.html'),
+	new Route('/hippo', 'hippo', '/pages/habitats/hippo/hippo.html'),
+	new Route('/hippo-nain', 'hippo-nain', '/pages/habitats/hippo/hippo-nain.html'),
+	new Route('/nyala', 'nyala', '/pages/habitats/hippo/nyala.html'),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename
