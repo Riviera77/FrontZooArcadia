@@ -20,7 +20,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+form {
 	font-family: $font-family-sans-serif;
 }
 
@@ -109,6 +110,18 @@ nav.navbar {
 		background-color: $primary;
 		color: $secondary;
 	}
+}
+//page connexion
+.connexion {
+	background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)), url('../img/parc.png');
+	width: auto;
+	height: 12.5rem;
+	margin: 20px;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.colorForm {
+	background-color: $primary;
 }
 @media screen and (max-width: 400px) {
 	.hero__bigTitle-content,

@@ -11869,7 +11869,8 @@ h4,
 h5,
 .h5,
 h6,
-.h6 {
+.h6,
+form {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -11960,6 +11961,19 @@ nav.navbar {
 .card-body .btn {
   background-color: #f5f0d7;
   color: #4f7330;
+}
+
+.connexion {
+  background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)), url("../img/parc.png");
+  width: auto;
+  height: 12.5rem;
+  margin: 20px;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.colorForm {
+  background-color: #f5f0d7;
 }
 
 @media screen and (max-width: 400px) {
