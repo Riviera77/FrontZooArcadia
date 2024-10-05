@@ -1,0 +1,82 @@
+<main class="container">
+  <section class="connexion d-flex row align-items-center">
+    <div
+      class="service__text col-lg-12 col-md-12 col-sm-12 p-3 m-3 text-center">
+      <h2 class="text-secondary fw-bold">Espace contact</h2>
+    </div>
+  </section>
+  <section>
+    <div
+      class="service__text col-lg-12 col-md-12 col-sm-12 p-3 m-3 text-center">
+      <h2 class="text-secondary fw-bold">Contactez-nous</h2>
+      <h5>
+        Vous avez des questions sur le parc Arcadia ? Un renseignement ? Nous
+        vous aidons volontiers
+        à planifier au mieux votre visite.
+        N'hésitez pas à nous contacter !
+      </h5>
+    </div>
+  </section>
+  <section class="service service--info p-3 m-3 bg-info">
+    <form>
+      <select class="form-select mb-3 colorForm" aria-label="civilité">
+        <option selected>Civilité <span class="fst-italic">(facultatif)</span>
+        </option>
+        <option value="1">Madame</option>
+        <option value="2">Monsieur</option>
+        <option value="3">Autres</option>
+      </select>
+      <div class="mb-3">
+        <label for="FirstNameInput" class="form-label">Prénom <span
+            class="fst-italic">(facultatif)</span></label>
+        <input type="text" class="form-control colorForm" id="FirstNameInput"
+          placeholder="Votre prénom" name="FirstName">
+      </div>
+      <div class="mb-3">
+        <label for="LastNameInput" class="form-label">Nom <span
+            class="fst-italic">(facultatif)</span></label>
+        <input type="text" class="form-control colorForm" id="LastNameInput"
+          placeholder="Votre nom" name="LastName">
+      </div>
+      <div class="mb-3">
+        <label for="PseudoInput" class="form-label">Pseudo <span
+            class="fst-italic">(obligatoire)</span></label>
+        <input type="text" class="form-control colorForm" id="PseudoInput"
+          placeholder="Votre pseudo" name="PseudoInput">
+      </div>
+      <div class="mb-3">
+        <label for="TitleInput" class="form-label">Sujet de la demande <span
+            class="fst-italic">(obligatoire)</span></label>
+        <select class="form-select mb-3 colorForm" aria-label="demande"
+          id="TitleInput" name="TitleInput" required>
+          <option selected>Sujet de la demande <span
+              class="fst-italic">(obligatoire)</span>
+          </option>
+          <option value="1">Réservation en ligne</option>
+          <option value="2">Tarifs, modes de règlement, billets</option>
+          <option value="3">Parrainage, dons</option>
+          <option value="4">Accueil des personnes à mobilité réduite</option>
+          <option value="5">Objets perdus/ trouvés</option>
+          <option value="6">Demande de devis</option>
+          <option value="7">Laisser un commentaire</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="FormControlTextarea" class="form-label">Message <span
+            class="fst-italic">(obligatoire)</span></label>
+        <textarea class="form-control colorForm" id="FormControlTextarea"
+          type="text" placeholder="Ecrivez votre message ici"
+          aria-label="message" rows="5" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Email <span
+            class="fst-italic">(obligatoire)</span></label>
+        <input type="email" class="form-control colorForm" id="emailInput"
+          required>
+      </div>
+      <div class="text-center mb-3">
+        <button type="submit" class="btn btn-secondary">Envoyer</button>
+      </div>
+    </form>
+  </section>
+</main>
