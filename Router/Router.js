@@ -47,11 +47,26 @@ const LoadContentPage = async () => {
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
+//const routeEvent = (event) => {
+//	event = event || window.event;
+//	event.preventDefault();
+// Mise à jour de l'URL dans l'historique du navigateur
+//	window.history.pushState({}, '', event.target.href);
+// Chargement du contenu de la nouvelle page
+//	LoadContentPage();
+//};
+
+// Fonction pour gérer les événements de routage (clic sur les liens)
 const routeEvent = (event) => {
-	event = event || window.event;
+	// Empêcher le comportement par défaut (chargement de la page)
 	event.preventDefault();
+
+	// Récupérer l'URL du lien cliqué
+	const url = event.target.href;
+
 	// Mise à jour de l'URL dans l'historique du navigateur
-	window.history.pushState({}, '', event.target.href);
+	window.history.pushState({}, '', url);
+
 	// Chargement du contenu de la nouvelle page
 	LoadContentPage();
 };

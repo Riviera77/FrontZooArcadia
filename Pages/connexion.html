@@ -8,16 +8,20 @@
   <section class="service service--info p-3 m-3 bg-info">
     <form>
       <div class="mb-3">
-        <label for="emailInput" class="form-label">Username</label>
-        <input type="email" class="form-control colorForm" id="emailInput">
+        <label for="usernameInput" class="form-label">Username</label>
+        <input type="email" class="form-control colorForm is-valid"
+          id="UsernameInput" required>
+        <div class="invalid-feedback">Le username est invalide</div>
       </div>
       <div class="mb-3">
         <label for="passwordInput" class="form-label">Mot de passe</label>
-        <input type="password" class="form-control colorForm"
-          id="passwordInput">
+        <input type="password" class="form-control colorForm is-valid"
+          id="PasswordInput" required>
+        <!-- <div class="invalid-feedback">Le mot de passe est invalide</div> -->
       </div>
       <div class="text-center mb-3">
-        <button type="submit" class="btn btn-secondary">Connexion</button>
+        <button type="button" class="btn btn-secondary"
+          id="btn-validation-connexion">Connexion</button>
       </div>
       <p class="text-center fst-italic mb-3">
         Vous rencontrez des problèmes de connexion ? Merci de contacter votre

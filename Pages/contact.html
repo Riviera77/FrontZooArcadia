@@ -19,9 +19,10 @@
   </section>
   <section class="service service--info p-3 m-3 bg-info">
     <form>
+      <label for="TitleInput" class="form-label">Civilité
+        <span class="fst-italic">(facultatif)</span></label>
       <select class="form-select mb-3 colorForm" aria-label="civilité">
-        <option selected>Civilité <span class="fst-italic">(facultatif)</span>
-        </option>
+        <option selected>Civilité</option>
         <option value="1">Madame</option>
         <option value="2">Monsieur</option>
         <option value="3">Autres</option>
@@ -42,20 +43,22 @@
         <label for="PseudoInput" class="form-label">Pseudo <span
             class="fst-italic">(obligatoire)</span></label>
         <input type="text" class="form-control colorForm" id="PseudoInput"
-          placeholder="Votre pseudo" name="PseudoInput" required>
+          placeholder="Votre pseudo" name="PseudoInput">
+        <div class="invalid-feedback">Le pseudo est requis</div>
+
       </div>
       <div class="mb-3">
-        <label for="TitleInput" class="form-label">Sujet de la demande <span
-            class="fst-italic">(obligatoire)</span></label>
+        <label for="TitleInput" class="form-label">Sujet de la demande
+          <span class="fst-italic">(obligatoire)</span></label>
         <select class="form-select mb-3 colorForm" aria-label="demande"
-          id="TitleInput" name="TitleInput" required>
-          <option selected>Sujet de la demande <span
-              class="fst-italic">(obligatoire)</span>
-          </option>
+          id="TitleInput" name="TitleInput">
+          <option>Sujet de la demande</option>
           <option value="1">Réservation en ligne</option>
-          <option value="2">Tarifs, modes de règlement, billets</option>
+          <option value="2">Tarifs, modes de règlement, billets
+          </option>
           <option value="3">Parrainage, dons</option>
-          <option value="4">Accueil des personnes à mobilité réduite</option>
+          <option value="4">Accueil des personnes à mobilité réduite
+          </option>
           <option value="5">Objets perdus/ trouvés</option>
           <option value="6">Demande de devis</option>
           <option value="7">Laisser un commentaire</option>
@@ -66,16 +69,18 @@
             class="fst-italic">(obligatoire)</span></label>
         <textarea class="form-control colorForm" id="FormControlTextarea"
           type="text" placeholder="Ecrivez votre message ici"
-          aria-label="message" rows="5" required></textarea>
+          aria-label="message" rows="5"></textarea>
+        <div class="invalid-feedback">Le message est requis</div>
       </div>
       <div class="mb-3">
         <label for="emailInput" class="form-label">Email <span
             class="fst-italic">(obligatoire)</span></label>
-        <input type="email" class="form-control colorForm" id="emailInput"
-          required>
+        <input type="email" class="form-control colorForm" id="emailInput">
+        <div class="invalid-feedback">L'adresse email est invalide</div>
       </div>
       <div class="text-center mb-3">
-        <button type="submit" class="btn btn-secondary">Envoyer</button>
+        <button type="submit" class="btn btn-secondary"
+          id="btn-validation-envoi">Envoyer</button>
       </div>
     </form>
   </section>
