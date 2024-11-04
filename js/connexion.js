@@ -9,6 +9,11 @@ function checkCredentials() {
 	// infos factices pour le test; il faudra appeler l'API pour vérifier les credentials en BDD
 	if (mailInput.value == 'test@mail.com' && passwordInput.value == 'Mimo@123') {
 		alert('Connexion réussie');
+
+		// Il faudra récupérer le vrai token de l'utilisateur connecté
+		const tocken = 'token123';
+		// Placer ce token en cookie pour les prochaines requêtes
+
 		// Rediriger l'utilisateur vers la page d'accueil si connexion réussie
 		window.location.replace('/');
 	} else {
