@@ -123,6 +123,9 @@ nav.navbar {
 .colorForm {
 	background-color: $primary;
 }
+.signBtn {
+	font-weight: normal;
+}
 @media screen and (max-width: 400px) {
 	.hero__bigTitle-content,
 	.hero__services-content,

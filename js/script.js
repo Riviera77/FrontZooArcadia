@@ -1,4 +1,18 @@
 const tokenCookieName = 'accesstoken';
+const roleCookieName = 'role';
+const signoutBtn = document.getElementById('signout-btn');
+
+signoutBtn.addEventListener('click', signout);
+
+function getRole() {
+	return getCookie(roleCookieName);
+}
+
+function signout() {
+	eraseCookie(tokenCookieName);
+	eraseCookie(roleCookieName);
+	window.location.reload();
+}
 
 // crée une fonction qui permet de récupérer le token dans le cookie valable 7 jours
 function setToken(token) {
@@ -45,8 +59,50 @@ function isConnected() {
 	}
 }
 // J'appelle ma méthode isConnected pour savoir si l'utilisateur est connecté
-if (isConnected()) {
+/* if (isConnected()) {
 	alert('Vous êtes connecté');
 } else {
 	alert("Vous n'êtes pas connecté");
+}
+ */
+/*
+disconnected
+connected (admin, employé ou vétérinaire)
+*/
+function showAndHideElementsForRoles() {
+	const userConnected = isConnected();
+	const role = getRole();
+
+	let allElementsToEdit = document.querySelectorAll('[data-show]');
+
+	allElementsToEdit.forEach((element) => {
+		switch (element.dataset.show) {
+			case 'disconnected':
+				if (userConnected) {
+					element.style.display = 'none';
+					//element.classList.add('d-none');
+				}
+				break;
+			case 'connected':
+				if (!userConnected) {
+					element.classList.add('d-none');
+				}
+				break;
+			case 'admin':
+				if (!userConnected || role != 'admin') {
+					element.classList.add('d-none');
+				}
+				break;
+			case 'employé':
+				if (!userConnected || role != 'employé') {
+					element.classList.add('d-none');
+				}
+				break;
+			case 'vétérinaire':
+				if (!userConnected || role != 'vétérinaire') {
+					element.classList.add('d-none');
+				}
+				break;
+		}
+	});
 }
