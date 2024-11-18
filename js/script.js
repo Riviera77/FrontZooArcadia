@@ -11,24 +11,25 @@ function getRole() {
 function signout() {
 	eraseCookie(tokenCookieName);
 	eraseCookie(roleCookieName);
-	window.location.reload();
+	// window.location.reload();
+	window.location.replace('/');
 }
 
 // crée une fonction qui permet de récupérer le token dans le cookie valable 7 jours
 function setToken(token) {
-	setCookie('tokenCookieName', token, 7);
+	setCookie(tokenCookieName, token, 7);
 }
 
 // crée une fonction qui permet de retourner le cookie du token
 function getToken() {
-	return getCookie('tokenCookieName');
+	return getCookie(tokenCookieName);
 }
 
 // crée une fonction qui permet d'installer le cookie, le récupérer et le supprimer
 function setCookie(name, value, days) {
 	let expires = '';
 	if (days) {
-		let date = new Date();
+		const date = new Date();
 		date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
 		expires = '; expires=' + date.toUTCString();
 	}
@@ -36,8 +37,8 @@ function setCookie(name, value, days) {
 }
 
 function getCookie(name) {
-	let nameEQ = name + '=';
-	let ca = document.cookie.split(';');
+	const nameEQ = name + '=';
+	const ca = document.cookie.split(';');
 	for (let i = 0; i < ca.length; i++) {
 		let c = ca[i];
 		while (c.charAt(0) == ' ') c = c.substring(1, c.length);
@@ -58,13 +59,7 @@ function isConnected() {
 		return true;
 	}
 }
-// J'appelle ma méthode isConnected pour savoir si l'utilisateur est connecté
-/* if (isConnected()) {
-	alert('Vous êtes connecté');
-} else {
-	alert("Vous n'êtes pas connecté");
-}
- */
+
 /*
 disconnected
 connected (admin, employé ou vétérinaire)
