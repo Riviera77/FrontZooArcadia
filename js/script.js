@@ -74,8 +74,7 @@ function showAndHideElementsForRoles() {
 		switch (element.dataset.show) {
 			case 'disconnected':
 				if (userConnected) {
-					element.style.display = 'none';
-					//element.classList.add('d-none');
+					element.classList.add('d-none');
 				}
 				break;
 			case 'connected':
