@@ -1,0 +1,174 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body,
+.service {
+  background-image: linear-gradient(rgba(245, 240, 215, 0.7), rgba(245, 240, 215, 0.7)), url("../img/white-paper-texture.jpg");
+}
+
+main {
+  padding-bottom: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  font-family: "Hind Madurai", serif;
+  font-size: 1.125rem;
+  color: #092330;
+}
+
+p {
+  font-family: "Hind Madurai", serif;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.125rem;
+  }
+}
+.btn {
+  font-weight: bolder;
+}
+.btn__primary {
+  background-color: #f5f0d7;
+  color: #4f7330;
+}
+.btn__secondary {
+  background-color: #4f7330;
+  color: #f5f0d7;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("../img/carousel-control-prev-icon.png");
+}
+
+.carousel-control-next-icon {
+  background-image: url("../img/carousel-control-next-icon.png");
+}
+
+.service--info {
+  background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)), url("../img/white-paper-texture.jpg");
+}
+
+.service--secondary {
+  background-image: linear-gradient(rgba(79, 115, 48, 0.7), rgba(79, 115, 48, 0.7)), url("../img/white-paper-texture.jpg");
+}
+
+nav.navbar {
+  background-image: linear-gradient(74deg, rgba(245, 240, 215, 0.8) 0%, rgba(143, 140, 125, 0.8) 100%), url(../img/Elephant-background.png);
+  background-size: cover;
+}
+
+.social-media {
+  color: #f5f0d7;
+}
+
+.hero__bigTitle {
+  background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)), url("../img/white-paper-texture.jpg");
+}
+.hero__services {
+  background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)), url("../img/white-paper-texture.jpg");
+}
+
+.card-body {
+  background-color: #bdc4ab;
+}
+.card-body .card-title {
+  font-weight: bold;
+  color: #4f7330;
+}
+.card-body .card-text {
+  font-weight: bold;
+}
+.card-body .btn {
+  background-color: #f5f0d7;
+  color: #4f7330;
+}
+
+.img-habitat {
+  position: relative;
+}
+.img-habitat:hover .titre-image,
+.img-habitat:hover .action-image-buttons {
+  opacity: 1;
+}
+.img-habitat:hover img {
+  filter: brightness(0.3);
+}
+.img-habitat img {
+  transition: all 0.3s;
+}
+.img-habitat .titre-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.img-habitat .action-image-buttons {
+  position: absolute;
+  top: 10%;
+  bottom: 5%;
+  right: 40%;
+  width: 20%;
+  padding: 5px;
+  display: flex;
+  opacity: 0;
+  transition: all 0.3s;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-between;
+}
+
+.connexion {
+  background-image: linear-gradient(rgba(189, 196, 171, 0.7), rgba(189, 196, 171, 0.7)), url("../img/parc.png");
+  width: auto;
+  height: 12.5rem;
+  margin: 20px;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.colorForm {
+  background-color: #f5f0d7;
+}
+
+.signBtn {
+  font-weight: normal;
+}
+
+@media screen and (max-width: 400px) {
+  .hero__bigTitle-content,
+  .hero__services-content,
+  .service__text {
+    order: 2;
+  }
+  .hero__bigTitle-img,
+  .hero__services-img,
+  .service__carousel {
+    order: -1;
+  }
+}/*# sourceMappingURL=main.css.map */
