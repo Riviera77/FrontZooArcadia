@@ -48,6 +48,15 @@ const LoadContentPage = async () => {
 	// Ajout du contenu HTML à l'élément avec l'ID "main-page"
 	document.getElementById('main-page').innerHTML = html;
 
+	// Charger dynamiquement la feuille de style principale si absente
+	if (!document.getElementById('main-style')) {
+	const cssLink = document.createElement('link');
+	cssLink.id = 'main-style';
+	cssLink.rel = 'stylesheet';
+	cssLink.href = '/FrontZooArcadia/styles/css/main.css';
+	document.head.appendChild(cssLink);
+	}
+
 	// Ajout du contenu JavaScript
 	if (actualRoute.pathJS != '') {
 		// Création d'une balise script
