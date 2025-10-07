@@ -23,7 +23,7 @@ const getRouteByUrl = (url) => {
 
 // Fonction pour charger le contenu de la page
 const LoadContentPage = async () => {
-	const path = window.location.pathname;
+	const path = window.location.hash || '#/';
 	// Récupération de l'URL actuelle
 	const actualRoute = getRouteByUrl(path);
 
@@ -33,12 +33,12 @@ const LoadContentPage = async () => {
 	if (allRolesArray.length > 0) {
 		if (allRolesArray.includes('disconnected')) {
 			if (isConnected()) {
-				window.location.replace = '/';
+				window.location.replace = '#/';
 			}
 		} else {
 			const roleUser = getRole();
 			if (!allRolesArray.includes(roleUser)) {
-				window.location.replace = '/';
+				window.location.replace = '#/';
 			}
 		}
 	}
@@ -67,32 +67,22 @@ const LoadContentPage = async () => {
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
-//const routeEvent = (event) => {
-//	event = event || window.event;
-//	event.preventDefault();
-// Mise à jour de l'URL dans l'historique du navigateur
-//	window.history.pushState({}, '', event.target.href);
-// Chargement du contenu de la nouvelle page
-//	LoadContentPage();
-//};
-
-// Fonction pour gérer les événements de routage (clic sur les liens)
 const routeEvent = (event) => {
 	// Empêcher le comportement par défaut (chargement de la page)
 	event.preventDefault();
 
 	// Récupérer l'URL du lien cliqué
-	const url = event.target.href;
+	const url = event.target.getAttribute('href');
 
 	// Mise à jour de l'URL dans l'historique du navigateur
-	window.history.pushState({}, '', url);
+	window.location.hash = url;
 
 	// Chargement du contenu de la nouvelle page
 	LoadContentPage();
 };
 
 // Gestion de l'événement de retour en arrière dans l'historique du navigateur
-window.onpopstate = LoadContentPage;
+window.addEventListener('hashchange', LoadContentPage);
 // Assignation de la fonction routeEvent à la propriété route de la fenêtre
 window.route = routeEvent;
 // Chargement du contenu de la page au chargement initial
