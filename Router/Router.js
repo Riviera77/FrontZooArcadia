@@ -1,98 +1,91 @@
-import Route from './Route.js';
-import { allRoutes, websiteName } from './allRoutes.js';
+import Route from "./Route.js";
+import { allRoutes, websiteName } from "./allRoutes.js";
 
 // Création d'une route pour la page 404 (page introuvable)
-const route404 = new Route('404', 'Page introuvable', '/pages/404.html', []);
+const route404 = new Route("404", "Page introuvable", "/pages/404.html", []);
 
 // Fonction pour récupérer la route correspondant à une URL donnée
 const getRouteByUrl = (url) => {
-	let currentRoute = null;
-	// Parcours de toutes les routes pour trouver la correspondance
-	allRoutes.forEach((element) => {
-		if (element.url == url) {
-			currentRoute = element;
-		}
-	});
-	// Si aucune correspondance n'est trouvée, on retourne la route 404
-	if (currentRoute != null) {
-		return currentRoute;
-	} else {
-		return route404;
-	}
+  let currentRoute = null;
+  // Parcours de toutes les routes pour trouver la correspondance
+  allRoutes.forEach((element) => {
+    if (element.url == url) {
+      currentRoute = element;
+    }
+  });
+  // Si aucune correspondance n'est trouvée, on retourne la route 404
+  if (currentRoute != null) {
+    return currentRoute;
+  } else {
+    return route404;
+  }
 };
 
 // Fonction pour charger le contenu de la page
 const LoadContentPage = async () => {
-	const path = window.location.hash || '#/';
-	// Récupération de l'URL actuelle
-	const actualRoute = getRouteByUrl(path);
+  const path = window.location.pathname;
+  // Récupération de l'URL actuelle
+  const actualRoute = getRouteByUrl(path);
 
-	//Vérifier les droits d'accès à la page
-	const allRolesArray = actualRoute.authorize;
+  //Vérifier les droits d'accès à la page
+  const allRolesArray = actualRoute.authorize;
 
-	if (allRolesArray.length > 0) {
-		if (allRolesArray.includes('disconnected')) {
-			if (isConnected()) {
-				window.location.replace = '#/';
-			}
-		} else {
-			const roleUser = getRole();
-			if (!allRolesArray.includes(roleUser)) {
-				window.location.replace = '#/';
-			}
-		}
-	}
+  if(allRolesArray.length > 0){
+    if(allRolesArray.includes("disconnected")){
+      if(isConnected()){
+        window.location.replace("/");
+      }
+    }
+    else{
+      const roleUser = getRole();
+      if(!allRolesArray.includes(roleUser)){
+        window.location.replace("/");
+      }
+    }
+  }
 
-	// Récupération du contenu HTML de la route
-	const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
-	// Ajout du contenu HTML à l'élément avec l'ID "main-page"
-	document.getElementById('main-page').innerHTML = html;
 
-	// Charger dynamiquement la feuille de style principale si absente
-	if (!document.getElementById('main-style')) {
-	const cssLink = document.createElement('link');
-	cssLink.id = 'main-style';
-	cssLink.rel = 'stylesheet';
-	cssLink.href = '/FrontZooArcadia/styles/css/main.css';
-	document.head.appendChild(cssLink);
-	}
+  // Récupération du contenu HTML de la route
+  const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
+  // Ajout du contenu HTML à l'élément avec l'ID "main-page"
+  document.getElementById("main-page").innerHTML = html;
 
-	// Ajout du contenu JavaScript
-	if (actualRoute.pathJS != '') {
-		// Création d'une balise script
-		let scriptTag = document.createElement('script');
-		scriptTag.setAttribute('type', 'text/javascript');
-		scriptTag.setAttribute('src', actualRoute.pathJS);
+  // Ajout du contenu JavaScript
+  if (actualRoute.pathJS != "") {
+    // Création d'une balise script
+    const scriptTag = document.createElement("script");
+    scriptTag.setAttribute("type", "text/javascript");
+    scriptTag.setAttribute("src", actualRoute.pathJS);
 
-		// Ajout de la balise script au corps du document
-		document.querySelector('body').appendChild(scriptTag);
-	}
+    // Ajout de la balise script au corps du document
+    document.querySelector("body").appendChild(scriptTag);
+  }
 
-	// Changement du titre de la page
-	document.title = actualRoute.title + ' - ' + websiteName;
+  // Changement du titre de la page
+  document.title = actualRoute.title + " - " + websiteName;
 
-	//Afficher et masquer les éléments en fonction du rôle de l'utilisateur
-	showAndHideElementsForRoles();
+  // Met à jour l'affichage des éléments en fonction des rôles
+  showAndHideElementsForRoles();
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
 const routeEvent = (event) => {
-	// Empêcher le comportement par défaut (chargement de la page)
-	event.preventDefault();
-
-	// Récupérer l'URL du lien cliqué
-	const url = event.target.getAttribute('href');
-
-	// Mise à jour de l'URL dans l'historique du navigateur
-	window.location.hash = url;
-
-	// Chargement du contenu de la nouvelle page
-	LoadContentPage();
+  event.preventDefault();
+  const href = event.currentTarget.getAttribute('href');
+  // Mise à jour de l'URL dans l'historique du navigateur
+  window.history.pushState({}, "", href);
+  // Chargement du contenu de la nouvelle page
+  LoadContentPage();
 };
 
+// Charger la page au démarrage
 // Gestion de l'événement de retour en arrière dans l'historique du navigateur
-window.addEventListener('hashchange', LoadContentPage);
-// Assignation de la fonction routeEvent à la propriété route de la fenêtre
-window.route = routeEvent;
-// Chargement du contenu de la page au chargement initial
-LoadContentPage();
+window.addEventListener("popstate", LoadContentPage);
+
+window.addEventListener("DOMContentLoaded", () => {
+  // Attacher le routage à tous les liens du menu
+  document.querySelectorAll("a.nav-link").forEach((link) => {
+    link.addEventListener("click", routeEvent);
+  });
+  LoadContentPage();
+});

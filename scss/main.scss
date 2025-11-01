@@ -1,6 +1,6 @@
-// @import url('/node_modules/bootstrap-icons/font/bootstrap-icons.css');
-// Bootstrap est déjà intégré via CDN dans le HTML
-@import 'custom';
+@use './custom' as *;
+@import url('/node_modules/bootstrap-icons/font/bootstrap-icons.css');
+//@use '../../node_modules/bootstrap/scss/bootstrap' as *;
 
 // Base
 html {
