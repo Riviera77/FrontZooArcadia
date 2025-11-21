@@ -11894,6 +11894,11 @@ p {
     font-size: 1.125rem;
   }
 }
+.message-accueil {
+  color: #4f7330;
+  font-weight: bolder;
+}
+
 .btn {
   font-weight: bolder;
 }
