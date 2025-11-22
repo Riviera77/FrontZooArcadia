@@ -14,10 +14,37 @@ jobs:
         server: ftp-zooarcadia.alwaysdata.net
         username: zooarcadia
         password: ${{ secrets.ftp_password }}
+        protocol: ftps
+        port: 21
         server-dir: /www/
         exclude: |
           **/.git*
           **/.git*/**
-          **/node_modules/bootstrap/scss/**
-          **/node_modules/bootstrap/js/**
-          **/node_modules/bootstrap-icons/icons/**
+          **/.github/**
+    
+          node_modules/**
+          package.json
+          package-lock.json
+          yarn.lock
+          pnpm-lock.yaml
+    
+          **/*.scss
+          **/scss/**
+          **/*.sass
+          **/*.less
+    
+          **/node_modules/bootstrap/**
+          **/node_modules/bootstrap-icons/**
+    
+          **/*.map
+          **/webpack.config.js
+          **/vite.config.js
+    
+          .DS_Store
+          **/.DS_Store
+          Thumbs.db
+    
+          **/php.ini
+          **/composer.*
+          **/Makefile
+          **/README.md
